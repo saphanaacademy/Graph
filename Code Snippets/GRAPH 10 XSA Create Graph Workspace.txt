@@ -1,0 +1,11 @@
+graphw.hdbgraphworkspace:
+
+GRAPH WORKSPACE "graph.graphdb::graphw"
+EDGE TABLE "graph.graphdb::graphf.RELATIONSHIPS"
+SOURCE COLUMN "SOURCE" TARGET COLUMN "TARGET" KEY COLUMN "KEY"
+VERTEX TABLE "graph.graphdb::graphf.MEMBERS"
+KEY COLUMN "NAME"
+
+--
+
+SELECT * FROM "SYS"."GRAPH_WORKSPACES";
