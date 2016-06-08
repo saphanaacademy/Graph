@@ -1,0 +1,6 @@
+SELECT * 
+ FROM "MCOVJGOT7XMI5VGE_GRAPH_HDI_CONTAINER"."graph.graphdb::myview2"
+ (
+ 	'placeholder' = ('$$MINDEPTH$$' , '1'),
+ 	'placeholder' = ('$$MAXDEPTH$$' , '2')
+ )
