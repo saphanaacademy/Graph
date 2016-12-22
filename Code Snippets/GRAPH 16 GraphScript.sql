@@ -6,14 +6,14 @@ CREATE PROCEDURE "GET_NUM_OF_DAUGHTERS_IN_UNDERWORLD" (OUT cnt INT)
 	Graph g = Graph("GREEK_MYTHOLOGY","GRAPH");
 	ALTER g ADD TEMPORARY VERTEX ATTRIBUTE(Bool livesInUnderWorld = false);
 	FOREACH e IN Edges(:g) {
-		Vertex source = Source(:e);
-		Vertex target = Target(:e);
-		Bool areGods = :source.type == 'god' AND :target.type == 'god';
+		Vertex msource = Source(:e);
+		Vertex mtarget = Target(:e);
+		Bool areGods = :msource."TYPE" == 'god' AND :mtarget."TYPE" == 'god';
 		IF (:e.type == 'hasDaughter' AND :areGods) {
-			IF (:target.residence == 'Underworld' AND :source.residence != 'Underworld') {
-				IF (NOT :target.livesInUnderWorld) {
+			IF (:mtarget.residence == 'Underworld' AND :msource.residence != 'Underworld') {
+				IF (NOT :mtarget.livesInUnderWorld) {
 					cnt = :cnt + 1;
-					target.livesInUnderWorld = TRUE;
+					mtarget.livesInUnderWorld = TRUE;
 				}
 			}
 		}
