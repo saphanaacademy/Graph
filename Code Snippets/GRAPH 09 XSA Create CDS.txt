@@ -5,16 +5,16 @@ namespace graph.graphdb;
 context graphf{
 
   entity MEMBERS {
-    key NAME: String(100) not null;
-    TYPE: String(100);
-    RESIDENCE: String(100);
+    key NAME: hana.VARCHAR(100) not null;
+    TYPE: hana.VARCHAR(100);
+    RESIDENCE: hana.VARCHAR(100);
   };
 
   entity RELATIONSHIPS {
     key KEY: Integer not null;
-    SOURCE: String(100) not null;
-    TARGET: String(100) not null;
-	TYPE: String(100);
+    SOURCE: hana.VARCHAR(100) not null;
+    TARGET: hana.VARCHAR(100) not null;
+	TYPE: hana.VARCHAR(100);
   };
 
 };
